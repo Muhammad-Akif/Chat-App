@@ -3,19 +3,22 @@ const INITIAL_STATE = {
     CurrentUser: {}
 };
 
-export default (state = INITIAL_STATE, action) =>{
+const reducer = (state = INITIAL_STATE, action) =>{
     console.log('action => ',action)
     switch (action.type) {
         case 'CurrentUser':
-            return ({
+            return {
                 ...state,
                 CurrentUser: action.payload
-            })
+            }
         case 'DatabaseUsers':
-            return ({
+            return {
                 ...state,
                 users: action.payload
-            })
+            }
+        default:
+            return state;
     }
-    return state;
 }
+
+export default reducer

@@ -48,6 +48,7 @@ const facebookLogin = (history) => {
 }
 
 const dbData = () => {
+    console.log('dbdata called')
     return (dispatch) => {
     let users = []
     firebase.database().ref('/').child('user').on('child_added',(data)=>{
@@ -57,4 +58,4 @@ const dbData = () => {
     }
 }
 
-export { dbData,facebookLogin }
+export { dbData, facebookLogin }
